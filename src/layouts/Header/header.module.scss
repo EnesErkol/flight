@@ -1,0 +1,24 @@
+.header{
+	padding: 18px 32px 0 32px;
+  width: 100%;
+}
+
+.headerContainer {
+	width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  color: white; 
+}
+
+.headerText {
+	font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.boldText {
+  font-weight: bold;
+}

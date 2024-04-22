@@ -1,0 +1,60 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color:#063048;
+}
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid gray;
+}
+.title {
+  color: white;
+  font-weight: 400;
+}
+.description {
+  color: white;
+  font-weight: 300;
+}
+.searchBar {
+  display: flex;
+  gap: 4px;
+  min-width: 600px;
+  align-items: center;
+  padding: 20px;
+  margin-top: 15px;
+  background-color: rgb(96 105 119 / 60%); 
+}
+.date {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  background-color: #242A38;
+  width: 120px;
+  height: 60px;
+  color: white;
+}
+.submitBtn {
+  background-color: #E81932;
+  border: 0;
+  border-radius: 0;
+  padding: 8px;
+  height: fit-content;
+  width: 45px;
+  height: 60px;
+}
+
+.flightSearchContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  align-items: center;
+}
+
+.autocomplete {
+  width: 200px;
+}
