@@ -7,14 +7,12 @@ import FlightCard from "@/src/components/pages/Flights/FlightCard";
 import { FareCategories } from "@/src/utils/enums";
 import { Button } from "@mantine/core";
 import Header from '@/src/layouts/Header/Header';
+import {order} from "@/src/utils/enums";
 
 export default function Flights() {
   const [passengerCount, setPassengerCount] = useState<number>(1);
   const [flights, setFlights] = useState<Flight[]>([]);
-  const [filter, setFilter] = useState<
-  // todo: enum'a çek
-    "DEFAULT" | "SORT_BY_PRICE" | "SORT_BY_TIME"
-  >("DEFAULT");
+  const [filter, setFilter] = useState<order>(order.DEFAULT);
 
   const [selectedFlightId, setSelectedFlightId] = useState<string | null>(null);
   const [selectedFareCategory, setSelectedFareCategory] =
@@ -66,17 +64,18 @@ export default function Flights() {
     <main className={styles.main}>
        <Header headerTextColor="#5E5E5E" borderStyle="1px solid #818181" />
       {flights.length === 0 ? (
-        <div>Loading...</div>
+        <div className={styles.loadingContianer}>Loading...</div>
       ) : (
           <div className={styles.flightContainer}>
             <div className={styles.flightInfoContainer}>
             <div className={styles.flightText}>Uçuş</div>
-            <div>
+            <div className={styles.destinationContainer}>
               {firstFlight.originAirport.city.name} -{" "}
               {firstFlight.destinationAirport.city.name}, {passengerCount} yolcu
             </div>
             <div>
               <Switch
+                className={styles.promotionSwitch}
                 labelPosition="left"
                 label="Promosyon kodu"
                 checked={isDiscountApplied}
@@ -98,10 +97,10 @@ export default function Flights() {
             <div className={styles.flightSelectionContainer}>
               <div className={styles.orderByContainer}>
                 Sıralama kriteri
-                <Button className={styles.sortButton} onClick={() => setFilter("SORT_BY_PRICE")} color="#1e293b" size="compact-md" >
+                <Button className={styles.sortButton} onClick={() => setFilter(order.SORT_BY_PRICE)} color="#1e293b" size="compact-md" >
                   Ekonomi kabine ücreti
                 </Button>
-                <Button className={styles.sortButton} onClick={() => setFilter("SORT_BY_TIME")} color="#1e293b" size="compact-md" >
+                <Button className={styles.sortButton} onClick={() => setFilter(order.SORT_BY_TIME)} color="#1e293b" size="compact-md" >
                   Kalkış saati
                 </Button>
               </div>

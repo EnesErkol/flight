@@ -87,7 +87,7 @@ const FlightCard: React.FC<IFlightCardProps> = ({
             isFlightSelected && selectedFareCategory === FareCategories.ECONOMY
           }
           onSelectedFareChange={() => handleFareChange(FareCategories.ECONOMY)}
-          title="ECONOMY"
+          title={FareCategories.ECONOMY}
           fareKey={FareCategories.ECONOMY}
         />
         <FareCategoryCard
@@ -96,8 +96,7 @@ const FlightCard: React.FC<IFlightCardProps> = ({
             isFlightSelected && selectedFareCategory === FareCategories.BUSINESS
           }
           onSelectedFareChange={() => handleFareChange(FareCategories.BUSINESS)}
-          // todo enum
-          title="BUSINESS"
+          title={FareCategories.BUSINESS}
           fareKey={FareCategories.BUSINESS}
         />
       </div>

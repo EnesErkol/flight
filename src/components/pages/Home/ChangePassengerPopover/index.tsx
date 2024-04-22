@@ -2,13 +2,13 @@ import { faMinus, faPeopleGroup, faPerson, faPlus } from "@fortawesome/free-soli
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Group, Popover, Radio } from "@mantine/core";
 import React from "react";
+import { FareCategories } from "@/src/utils/enums";
 
 import styles from "./style.module.scss";
 
 interface Props {
   passengerCount: number;
   setPassengerCount: React.Dispatch<React.SetStateAction<number>>;
-  // todo : enum'a çek
   fareCategory: string;
   setFareCaregory: React.Dispatch<React.SetStateAction<string>>;
   buttonStyle?: React.CSSProperties;
@@ -37,8 +37,8 @@ const ChangePassengerPopover = ({
         <p className={styles.dropdownHeader}>Kabin ve Yolcu Seçimi</p>
         <Radio.Group onChange={setFareCaregory} value={fareCategory} className={styles.radioBtnContainer}>
           <Group mt="xs">
-            <Radio value="ECONOMY" label="Economy Class" />
-            <Radio value="BUSINESS" label="Business Class" />
+            <Radio value={FareCategories.ECONOMY} label="Economy Class" />
+            <Radio value={FareCategories.BUSINESS} label="Business Class" />
           </Group>
         </Radio.Group>
         <div className={styles.passengerQuantityContainer}>

@@ -15,13 +15,14 @@ import styles from "./page.module.scss";
 import { useRouter } from "next/navigation";
 import ErrorModal from '@/src/modals/ErrorModal';
 import Header from '@/src/layouts/Header/Header';
+import { FareCategories } from '@/src/utils/enums';
 
 export default function Home() {
   const router = useRouter();
 
   const [originCity, setOriginCity] = useState<string | undefined>();
   const [destinationCity, setDestinationCity] = useState<string | undefined>();
-  const [fareCategory, setFareCategory] = useState<string>("ECONOMY");
+  const [fareCategory, setFareCategory] = useState<string>(FareCategories.ECONOMY);
   const [passengerCount, setPassengerCount] = useState<number>(1);
   const [errorModalOpen, setErrorModalOpen] = useState(false);
   

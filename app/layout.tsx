@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.scss";
-import { createTheme, MantineProvider } from "@mantine/core";
+import { ColorSchemeScript, createTheme, MantineProvider  } from "@mantine/core";
 import "@mantine/core/styles.css";
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
@@ -24,7 +24,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <MantineProvider>{children}</MantineProvider>
+        <ColorSchemeScript forceColorScheme="light" />
+        <MantineProvider forceColorScheme="light">{children}</MantineProvider>
       </body>
     </html>
   );
